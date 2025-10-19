@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learn & Earn Skills</title>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+       :root {
+        --gradient-border-bg: linear-gradient(145deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0));
+      }
+      html.dark {
+        --gradient-border-bg: linear-gradient(145deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+      .gradient-text {
+        background: linear-gradient(90deg, #4F46E5, #A855F7, #EC4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gradient-border-card {
+        border: 1px solid transparent;
+        background-clip: padding-box;
+        position: relative;
+      }
+      .gradient-border-card::before {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        z-index: -1;
+        margin: -1px;
+        border-radius: inherit;
+        background: var(--gradient-border-bg);
+      }
+      .hero-gradient {
+        background: radial-gradient(circle at 10% 20%, rgba(79, 70, 229, 0.2) 0%, transparent 25%),
+                    radial-gradient(circle at 80% 90%, rgba(217, 70, 239, 0.2) 0%, transparent 25%),
+                    radial-gradient(circle at 50% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 20%);
+        animation: moveGradients 20s infinite alternate ease-in-out;
+      }
+      @keyframes moveGradients {
+        0% { background-position: 0% 50%, 100% 50%, 50% 50%; }
+        100% { background-position: 100% 50%, 0% 50%, 50% 50%; }
+      }
+      .scroll-reveal {
+        transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      .scroll-reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
