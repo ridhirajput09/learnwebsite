@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
         </p>
         <div className="mt-12 animate-[fadeInUp_1s_ease-out_0.6s_forwards] opacity-0">
           <a
-            href="https://chat.whatsapp.com/BYZaPFc7faNAz4eIwiV4TA?mode=wwt"
+            href="https://forms.gle/RBN5ne5629r86U4v7"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-indigo-600 text-white dark:bg-white dark:text-black font-bold text-lg px-8 py-4 rounded-xl inline-block
